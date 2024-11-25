@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Calculadora papam
+    </title>
+
+    <style>
+
+    button{
+        color: rgb(11, 87, 158);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    
+    }
+
+    </style>
+
+<!-- Funciionamento 01-->
+    <script>
+
+
+        var n1 = 0;
+        var n2 = 0;
+        var operador;
+
+
+
+
+
+        function btn_(parametro){
+        
+        if(document.getElementById("resultado").innerHTML == 0){
+        document.getElementById("resultado").innerHTML = parametro;
+        }
+        else{
+        document.getElementById("resultado").innerHTML += parametro;
+        }
+
+        }
+
+
+
+
+
+
+        function somar() {
+            operador = "+";
+            n1 = document.getElementById("resultado").innerHTML;
+            document.getElementById("resultado").innerHTML = 0;
+        }
+
+        function diminuir() {
+            operador = "-";
+            n1 = document.getElementById("resultado").innerHTML;
+            document.getElementById("resultado").innerHTML = 0;
+        }
+
+        function multipli() {
+            operador = "*";
+            n1 = document.getElementById("resultado").innerHTML;
+            document.getElementById("resultado").innerHTML = 0;
+        }
+
+        function dividi() {
+            operador = "/";
+            n1 = document.getElementById("resultado").innerHTML;
+            document.getElementById("resultado").innerHTML = 0;
+        }
+
+        function resultar(){
+            n2 = document.getElementById("resultado").innerHTML;
+            if(operador == "+") document.getElementById("resultado").innerHTML = Number(n1) + Number(n2);
+            if(operador == "-") document.getElementById("resultado").innerHTML = Number(n1) - Number(n2);
+            if(operador == "*") document.getElementById("resultado").innerHTML = Number(n1) * Number(n2);
+            if(operador == "/") document.getElementById("resultado").innerHTML = Number(n1) / Number(n2);
+
+        }
+
+
+    </script>
+<!-- FIM do funcionamento-->
+
+</head>
+<style>
+
+    body
+    { background-color: rgb(66, 66, 66);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    }
+
+
+    #resultado{
+        display: flex;
+    border-radius: 3%;
+    border-color: aliceblue;
+    height: 45px;
+    width: 183px;
+    background-color: aliceblue;
+    align-items: center;
+    justify-content: center;
+    }
+    #container{
+        background-color: rgb(39, 37, 37);
+    width: 200px;
+    height: 300px;
+    display: flex;
+    border-radius: 10%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    }
+    #tudo{
+        display: flex;
+    }
+</style>
+
+
+<!-- Corpo da calc-->
+<body>
+
+    <p id="resultado">0</p>
+
+<div id="tudo">
+
+
+
+
+    <div id="container">
+    <div>
+    <button onclick="location.reload()">C</button>
+    <button onclick="dividi()">÷</button>
+    <button onclick="multipli()">x</button>
+    <button onclick="resultar()">=</button>
+    </div>
+
+
+    <div>
+    <button onclick="btn_(7)">7</button>
+    <button onclick="btn_(8)">8</button>
+    <button onclick="btn_(9)">9</button>
+    <button onclick="diminuir()">-</button>
+    </div>
+
+    <div>
+    <button onclick="btn_(4)">4</button>
+    <button onclick="btn_(5)">5</button>
+    <button onclick="btn_(6)">6</button>
+    <button onclick="somar()">+</button>
+    </div>
+
+    <div>
+    <button onclick="btn_(1)">1</button>
+    <button onclick="btn_(2)">2</button>
+    <button onclick="btn_(3)">3</button>
+    <button onclick="btn_(0)">0</button>
+    </div>
+
+</div>
+</div>
+</body>
+</html>
